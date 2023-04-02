@@ -1,0 +1,17 @@
+	-Changes-
+* Added wallet to Player Shares
+* Added Networth to Player Shares
+* Added Popup displying dividend received
+* Moved Stock Control to under Action Bar from the bottom of the page
+* Fixed the spelling of Woolworth on Player Shares
+* Changed inputs to use numeric keyboard on phones
+* Fixed Action Bar (1 For 1, 2 For 1, 3 For 1) not working
+* Switched total and Div/Broker fee columns on Player Shares
+* Added potential div earned to empty total column
+* Removed clear button from Player Shares
+* Added sell all base price to Action Bar
+* Added alerts to Buy/Sell stock, stock holders, dividend, sell all
+
+
+	-Known Bugs/Problems-
+* Slight problem with alert, if press back to back timer does not reset but stacks, so duration of alert is shortend untill all timers have expired

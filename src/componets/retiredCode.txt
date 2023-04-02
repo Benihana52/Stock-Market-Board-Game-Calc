@@ -1,0 +1,513 @@
+* Market Table
+
+<div>
+    <h1 style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }}>
+        Market
+    </h1>
+</div>
+
+<Table style={{ fontSize: 10 }} striped bordered hover variant="dark" size="sm">
+    <thead>
+        <tr>
+            <th>Alcoa</th>
+            <th>American Motors</th>
+            <th>J. I. Case</th>
+            <th>General Mills</th>
+            <th>Stock Location</th>
+            <th>International Shoe</th>
+            <th>Maytag</th>
+            <th>Western Publishing</th>
+            <th>Woolworth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>${this.formatAlcoaPrice()}</td>
+            <td>${this.formatAmericanMotorsaPrice()}</td>
+            <td>${this.formatJICasePrice()}</td>
+            <td>${this.formatGeneralMillsPrice()}</td>
+            <td>{this.state.stockLocation}</td>
+            <td>${this.formatIntShoesPrice()}</td>
+            <td>${this.formatMayTagPrice()}</td>
+            <td>${this.formatWesternPublishingPrice()}</td>
+            <td>${this.formatWoolWorthPrice()}</td>
+        </tr>
+    </tbody>
+</Table>
+
+* Old render before changing "Stock Owned" from <input> to <span>
+
+render() {
+        return (
+            <div style={{ backgroundColor: 'grey' }}>
+                <div>
+                    <h1 style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        Player Shares
+                    </h1>
+                </div>
+
+                <Table style={{ fontSize: 10 }} bordered responsive hover size="sm">
+                    <thead>
+                        <tr>
+                            <th>Stock</th>
+                            <th>Current Price</th>
+                            <th>Stock Owned</th>
+                            <th>Stock Value</th>
+                            <td><span className="m-1">Total</span></td>
+                            <td><span className="m-1">Broker Fee</span></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style={this.alcoaStyle}>
+                            <td><span className="m-1">Alcoa</span></td>
+                            <td><span className="m-1">${this.formatAlcoaPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ alcoaAmount: e.target.value }); this.setState({ stockValueAlcoa: e * this.formatAlcoaPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.alcoaAmount * this.formatAlcoaPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.americanStyle}>
+                            <td><span className="m-1">Am. Motors</span></td>
+                            <td><span className="m-1">${this.formatAmericanMotorsaPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ americanMotorsAmount: e.target.value }); this.setState({ stockValueAmericanMotors: e * this.formatAmericanMotorsaPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.americanMotorsAmount * this.formatAmericanMotorsaPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.jIStyle}>
+                            <td><span className="m-1">J. I. Case</span></td>
+                            <td><span className="m-1">${this.formatJICasePrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ jICaseAmount: e.target.value }); this.setState({ stockValueJICase: e * this.formatJICasePrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.jICaseAmount * this.formatJICasePrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.generalStyle}>
+                            <td><span className="m-1">Gen. Mills</span></td>
+                            <td><span className="m-1">${this.formatGeneralMillsPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ generalMillsAmount: e.target.value }); this.setState({ stockValueGeneralMills: e * this.formatGeneralMillsPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.generalMillsAmount * this.formatGeneralMillsPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.intShoeStyle}>
+                            <td><span className="m-1">Int. Shoe</span></td>
+                            <td><span className="m-1">${this.formatIntShoesPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ intShoeAmount: e.target.value }); this.setState({ stockValueIntShoe: e * this.formatIntShoesPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.intShoeAmount * this.formatIntShoesPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.maytagStyle}>
+                            <td><span className="m-1">Maytag</span></td>
+                            <td><span className="m-1">${this.formatMayTagPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ maytagAmount: e.target.value }); this.setState({ stockValueMaytag: e * this.formatMayTagPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.maytagAmount * this.formatMayTagPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.westernStyle}>
+                            <td><span className="m-1">Western Pub.</span></td>
+                            <td><span className="m-1">${this.formatWesternPublishingPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ westernPublAmount: e.target.value }); this.setState({ stockValueWesternPubl: e * this.formatWesternPublishingPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.westernPublAmount * this.formatWesternPublishingPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.whoolStyle}>
+                            <td><span className="m-1">Woolworth</span></td>
+                            <td><span className="m-1">${this.formatWoolWorthPrice()}</span></td>
+                            <td><input
+                                let placeHolderVal={this.state.woolwthAmount}
+                                style={{ width: "100%" }}
+                                type="this.props"
+                                value={this.placeHolderVal}
+                                onChange={(e) => { this.setState({ woolwthAmount: e.target.value }); this.setState({ stockValueWoolwth: e * this.formatWoolWorthPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.woolwthAmount * this.formatWoolWorthPrice()}</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style={{ backgroundColr: 'black', color: 'white' }}>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1">
+                                <button
+                                    onClick={() => this.handleClearButton()}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    <b>Clear</b>
+                                </button>
+                            </td>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1"><span>${
+                                (this.state.alcoaAmount * this.formatAlcoaPrice()) +
+                                (this.state.americanMotorsAmount * this.formatAmericanMotorsaPrice()) +
+                                (this.state.jICaseAmount * this.formatJICasePrice()) +
+                                (this.state.generalMillsAmount * this.formatGeneralMillsPrice()) +
+                                (this.state.intShoeAmount * this.formatIntShoesPrice()) +
+                                (this.state.maytagAmount * this.formatMayTagPrice()) +
+                                (this.state.westernPublAmount * this.formatWesternPublishingPrice()) +
+                                (this.state.woolwthAmount * this.formatWoolWorthPrice())
+                            }</span></td>
+                            <td className="m-1"><span>${
+                                (this.state.alcoaAmount * 10) +
+                                (this.state.americanMotorsAmount * 10) +
+                                (this.state.jICaseAmount * 10) +
+                                (this.state.generalMillsAmount * 10) +
+                                (this.state.intShoeAmount * 10) +
+                                (this.state.maytagAmount * 10) +
+                                (this.state.westernPublAmount * 10) +
+                                (this.state.woolwthAmount * 10)
+                            }</span></td>
+                        </tr>
+                    </tbody>
+                </Table>
+
+
+                <div>
+                    <hr />
+                    <h1 style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        Buy Calculator
+                    </h1>
+                    <i style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        Warning - This is not your actual stock!
+                    </i>
+                    <p></p>
+                </div>
+
+                <Table style={{ fontSize: 10 }} striped bordered hover responsive size="sm">
+                    <thead>
+                        <tr>
+                            <th>Stock</th>
+                            <th>Current Price</th>
+                            <th>Stock Owned</th>
+                            <th>Stock Value</th>
+                            <td><span className="m-1">Total</span></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style={this.alcoaStyle}>
+                            <td><span className="m-1">Alcoa</span></td>
+                            <td><span className="m-1">${this.formatAlcoaPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ alcoaCalcAmount: e.target.value }); this.setState({ stockCalcValueAlcoa: e * this.formatAlcoaPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.alcoaCalcAmount * this.formatAlcoaPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.americanStyle}>
+                            <td><span className="m-1">Am. Motors</span></td>
+                            <td><span className="m-1">${this.formatAmericanMotorsaPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ americanMotorsCalcAmount: e.target.value }); this.setState({ stockCalcValueAmericanMotors: e * this.formatAmericanMotorsaPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.americanMotorsCalcAmount * this.formatAmericanMotorsaPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.jIStyle}>
+                            <td><span className="m-1">J. I. Case</span></td>
+                            <td><span className="m-1">${this.formatJICasePrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ jICaseCalcAmount: e.target.value }); this.setState({ stockCalcValueJICase: e * this.formatJICasePrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.jICaseCalcAmount * this.formatJICasePrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.generalStyle}>
+                            <td><span className="m-1">Gen. Mills</span></td>
+                            <td><span className="m-1">${this.formatGeneralMillsPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ generalMillsCalcAmount: e.target.value }); this.setState({ stockCalcValueGeneralMills: e * this.formatGeneralMillsPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.generalMillsCalcAmount * this.formatGeneralMillsPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.intShoeStyle}>
+                            <td><span className="m-1">Int. Shoe</span></td>
+                            <td><span className="m-1">${this.formatIntShoesPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ intShoeCalcAmount: e.target.value }); this.setState({ stockCalcValueIntShoe: e * this.formatIntShoesPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.intShoeCalcAmount * this.formatIntShoesPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.maytagStyle}>
+                            <td><span className="m-1">Maytag</span></td>
+                            <td><span className="m-1">${this.formatMayTagPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ maytagCalcAmount: e.target.value }); this.setState({ stockCalcValueMaytag: e * this.formatMayTagPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.maytagCalcAmount * this.formatMayTagPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.westernStyle}>
+                            <td><span className="m-1">Western Pub.</span></td>
+                            <td><span className="m-1">${this.formatWesternPublishingPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ westernPublCalcAmount: e.target.value }); this.setState({ stockCalcValueWesternPubl: e * this.formatWesternPublishingPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.westernPublCalcAmount * this.formatWesternPublishingPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={this.whoolStyle}>
+                            <td><span className="m-1">Woolworth</span></td>
+                            <td><span className="m-1">${this.formatWoolWorthPrice()}</span></td>
+                            <td><input
+                                style={{ width: "100%" }}
+                                type="number"
+                                onChange={(e) => { this.setState({ woolwthCalcAmount: e.target.value }); this.setState({ stockCalcValueWoolwth: e * this.formatWoolWorthPrice() }) }}
+                            />
+                            </td>
+                            <td><span className="m-1">${this.state.woolwthCalcAmount * this.formatWoolWorthPrice()}</span></td>
+                            <td></td>
+                        </tr>
+                        <tr style={{ backgroundColr: 'black', color: 'white' }}>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1"><span></span></td>
+                            <td className="m-1"><span>${
+                                (this.state.alcoaAmount * this.formatAlcoaPrice()) +
+                                (this.state.americanMotorsAmount * this.formatAmericanMotorsaPrice()) +
+                                (this.state.jICaseAmount * this.formatJICasePrice()) +
+                                (this.state.generalMillsAmount * this.formatGeneralMillsPrice()) +
+                                (this.state.intShoeAmount * this.formatIntShoesPrice()) +
+                                (this.state.maytagAmount * this.formatMayTagPrice()) +
+                                (this.state.westernPublAmount * this.formatWesternPublishingPrice()) +
+                                (this.state.woolwthAmount * this.formatWoolWorthPrice())
+                            }</span></td>
+                        </tr>
+                    </tbody>
+                </Table>
+
+                <div>
+                    <hr />
+                    <h1 style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        Stock Controls
+                    </h1>
+                    <p style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        Stock Location: &nbsp; {this.state.stockLocation}
+                    </p>
+                </div>
+
+                <Table style={{ fontSize: 10 }} striped bordered hover responsive size="sm">
+                    <thead>
+                        <tr>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(5)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'green', color: 'white' }}
+                                >
+                                    Up 20
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(4)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'green', color: 'white' }}
+                                >
+                                    Up 5
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(3)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'green', color: 'white' }}
+                                >
+                                    Up 4
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(2)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'green', color: 'white' }}
+                                >
+                                    Up 3
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(1)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'green', color: 'white' }}
+                                >
+                                    Up 2
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(0)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'green', color: 'white' }}
+                                >
+                                    Up 1
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(11)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Dwn 20
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(10)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Dwn 5
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(9)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Dwn 4
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(8)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Dwn 3
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(7)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Dwn 2
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    onClick={() => this.handleStockPriceIncrement(6)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Dwn 1
+                                </button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </Table>
+
+                <div>
+                    <p style={{
+                        display: 'flex',
+                        alignItems: 'left',
+                        justifyContent: 'left',
+                    }}>
+
+                    </p>
+                    <footer style={{
+                        display: 'flex',
+                        alignItems: 'left',
+                        justifyContent: 'left',
+                    }}>
+                        &copy; {current.getFullYear()} &nbsp; <em></em>  Designed and Created by: Benjamin Brown
+                    </footer>
+                </div>
+            </div >
+        );
+    }

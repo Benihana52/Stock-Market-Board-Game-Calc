@@ -1,0 +1,2 @@
+E:\Programming 2023+\Projects\StockMarketBoardGameCalc\obj\Debug\stockmarketboardgamecalc.esproj.SuggestedBindingRedirects.cache
+E:\Programming 2023+\Projects\StockMarketBoardGameCalc\obj\Debug\stockmarketboardgamecalc.esproj.CoreCompileInputs.cache

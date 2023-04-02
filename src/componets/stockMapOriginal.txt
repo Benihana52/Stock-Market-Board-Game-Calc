@@ -1,0 +1,575 @@
+let pricesAlcoa = new map([
+	[-25,30]
+	[-24,34]
+	[-23,38]
+	[-22,42]
+	[-21,46]
+	[-20,50]
+	[-19,54]
+	[-18,58]
+	[-17,62]
+	[-16,66]
+	[-15,70]
+	[-14,74]
+	[-13,78]
+	[-12,82]
+	[-11,86]
+	[-10,90]
+	[-9,94]
+	[-8,98]
+	[-7,102]
+	[-6,106]
+	[-5,110]
+	[-4,114]
+	[-3,118]
+	[-2,122]
+	[-1,126]
+	[0,130]
+	[1,134]
+	[2,138]
+	[3,142]
+	[4,146]
+	[5,150]
+	[6,154]
+	[7,158]
+	[8,162]
+	[9,166]
+	[10,170]
+	[11,174]
+	[12,178]
+	[13,182]
+	[14,186]
+	[15,190]
+	[16,194]
+	[17,198]
+	[18,202]
+	[19,206]
+	[20,210]
+	[21,214]
+	[22,218]
+	[23,222]
+	[24,226]
+	[25,230]
+])
+let pricesAmericanMotors = new map([
+	[-25,10]
+	[-24,12]
+	[-23,14]
+	[-22,16]
+	[-21,18]
+	[-20,20]
+	[-19,22]
+	[-18,24]
+	[-17,26]
+	[-16,28]
+	[-15,30]
+	[-14,32]
+	[-13,34]
+	[-12,36]
+	[-11,38]
+	[-10,40]
+	[-9,42]
+	[-8,44]
+	[-7,46]
+	[-6,48]
+	[-5,50]
+	[-4,52]
+	[-3,54]
+	[-2,56]
+	[-1,58]
+	[0,60]
+	[1,62]
+	[2,64]
+	[3,66]
+	[4,68]
+	[5,70]
+	[6,72]
+	[7,74]
+	[8,76]
+	[9,78]
+	[10,80]
+	[11,82]
+	[12,84]
+	[13,86]
+	[14,88]
+	[15,90]
+	[16,92]
+	[17,94]
+	[18,96]
+	[19,98]
+	[20,100]
+	[21,102]
+	[22,104]
+	[23,106]
+	[24,108]
+	[25,110]
+])
+let pricesJICase = new map([
+	[-25,15]
+	[-24,16]
+	[-23,17]
+	[-22,18]
+	[-21,19]
+	[-20,20]
+	[-19,21]
+	[-18,22]
+	[-17,23]
+	[-16,24]
+	[-15,25]
+	[-14,26]
+	[-13,27]
+	[-12,28]
+	[-11,29]
+	[-10,30]
+	[-9,31]
+	[-8,32]
+	[-7,33]
+	[-6,34]
+	[-5,35]
+	[-4,37]
+	[-3,39]
+	[-2,41]
+	[-1,43]
+	[0,45]
+	[1,47]
+	[2,49]
+	[3,51]
+	[4,53]
+	[5,55]
+	[6,56]
+	[7,57]
+	[8,58]
+	[9,59]
+	[10,60]
+	[11,61]
+	[12,62]
+	[13,63]
+	[14,64]
+	[15,65]
+	[16,66]
+	[17,67]
+	[18,68]
+	[19,69]
+	[20,70]
+	[21,71]
+	[22,72]
+	[23,73]
+	[24,74]
+	[25,75]
+])
+let pricesGeneralMills = new map([
+	[-25,18]
+	[-24,18]
+	[-23,19]
+	[-22,19]
+	[-21,20]
+	[-20,20]
+	[-19,21]
+	[-18,21]
+	[-17,22]
+	[-16,22]
+	[-15,23]
+	[-14,23]
+	[-13,24]
+	[-12,24]
+	[-11,25]
+	[-10,25]
+	[-9,26]
+	[-8,26]
+	[-7,27]
+	[-6,27]
+	[-5,28]
+	[-4,28]
+	[-3,29]
+	[-2,29]
+	[-1,30]
+	[0,30]
+	[1,30]
+	[2,31]
+	[3,31]
+	[4,32]
+	[5,32]
+	[6,33]
+	[7,33]
+	[8,34]
+	[9,34]
+	[10,35]
+	[11,35]
+	[12,36]
+	[13,36]
+	[14,37]
+	[15,37]
+	[16,38]
+	[17,38]
+	[18,39]
+	[19,39]
+	[20,40]
+	[21,40]
+	[22,41]
+	[23,41]
+	[24,42]
+	[25,42]
+])
+let pricesIntShoes = new map([
+	[-25,42]
+	[-24,42]
+	[-23,41]
+	[-22,41]
+	[-21,40]
+	[-20,40]
+	[-19,39]
+	[-18,39]
+	[-17,38]
+	[-16,38]
+	[-15,37]
+	[-14,37]
+	[-13,36]
+	[-12,36]
+	[-11,35]
+	[-10,35]
+	[-9,34]
+	[-8,34]
+	[-7,33]
+	[-6,33]
+	[-5,32]
+	[-4,32]
+	[-3,31]
+	[-2,31]
+	[-1,30]
+	[0,30]
+	[1,30]
+	[2,29]
+	[3,29]
+	[4,28]
+	[5,28]
+	[6,27]
+	[7,27]
+	[8,26]
+	[9,26]
+	[10,25]
+	[11,25]
+	[12,24]
+	[13,24]
+	[14,23]
+	[15,23]
+	[16,22]
+	[17,22]
+	[18,21]
+	[19,21]
+	[20,20]
+	[21,20]
+	[22,19]
+	[23,19]
+	[24,18]
+	[25,18]
+])
+let pricesMayTag = new map([
+	[-25,75]
+	[-24,74]
+	[-23,73]
+	[-22,72]
+	[-21,71]
+	[-20,70]
+	[-19,69]
+	[-18,68]
+	[-17,67]
+	[-16,66]
+	[-15,65]
+	[-14,64]
+	[-13,63]
+	[-12,62]
+	[-11,61]
+	[-10,60]
+	[-9,59]
+	[-8,58]
+	[-7,57]
+	[-6,56]
+	[-5,55]
+	[-4,53]
+	[-3,51]
+	[-2,49]
+	[-1,47]
+	[0,45]
+	[1,43]
+	[2,41]
+	[3,39]
+	[4,37]
+	[5,35]
+	[6,34]
+	[7,33]
+	[8,32]
+	[9,31]
+	[10,30]
+	[11,29]
+	[12,28]
+	[13,27]
+	[14,26]
+	[15,25]
+	[16,24]
+	[17,23]
+	[18,22]
+	[19,21]
+	[20,20]
+	[21,19]
+	[22,18]
+	[23,17]
+	[24,16]
+	[25,15]
+])
+let pricesWesternPublishing = new map([
+	[-25,110]
+	[-24,108]
+	[-23,106]
+	[-22,104]
+	[-21,102]
+	[-20,100]
+	[-19,98]
+	[-18,96]
+	[-17,94]
+	[-16,92]
+	[-15,90]
+	[-14,88]
+	[-13,86]
+	[-12,84]
+	[-11,82]
+	[-10,80]
+	[-9,78]
+	[-8,76]
+	[-7,74]
+	[-6,72]
+	[-5,70]
+	[-4,68]
+	[-3,66]
+	[-2,64]
+	[-1,62]
+	[0,60]
+	[1,58]
+	[2,56]
+	[3,54]
+	[4,52]
+	[5,50]
+	[6,48]
+	[7,46]
+	[8,44]
+	[9,42]
+	[10,40]
+	[11,38]
+	[12,36]
+	[13,34]
+	[14,32]
+	[15,30]
+	[16,28]
+	[17,26]
+	[18,24]
+	[19,22]
+	[20,20]
+	[21,18]
+	[22,16]
+	[23,14]
+	[24,12]
+	[25,10]
+])
+let pricesWoolWorth = new map([
+	[-25,230]
+	[-24,226]
+	[-23,222]
+	[-22,218]
+	[-21,214]
+	[-20,210]
+	[-19,206]
+	[-18,202]
+	[-17,198]
+	[-16,194]
+	[-15,190]
+	[-14,186]
+	[-13,182]
+	[-12,178]
+	[-11,174]
+	[-10,170]
+	[-9,166]
+	[-8,162]
+	[-7,158]
+	[-6,154]
+	[-5,150]
+	[-4,146]
+	[-3,142]
+	[-2,138]
+	[-1,134]
+	[0,130]
+	[1,126]
+	[2,122]
+	[3,118]
+	[4,114]
+	[5,110]
+	[6,106]
+	[7,102]
+	[8,98]
+	[9,94]
+	[10,90]
+	[11,86]
+	[12,82]
+	[13,78]
+	[14,74]
+	[15,70]
+	[16,66]
+	[17,62]
+	[18,58]
+	[19,54]
+	[20,50]
+	[21,46]
+	[22,42]
+	[23,38]
+	[24,34]
+	[25,30]
+])
+
+
+
+*Original Dic from python
+
+stockDict = {
+  "-25":{"Alcoa":"30", "American Motors":"10", "J. I. Case":"15", "General Mills":"18", "Int. Shoes":"42", "MayTag":"75", "Western Publishing":"110", "WoolWorth":"230", },
+
+  "-24":{"Alcoa":"34", "American Motors":"12", "J. I. Case":"16", "General Mills":"18", "Int. Shoes":"42", "MayTag":"74", "Western Publishing":"108", "WoolWorth":"226", },
+
+  "-23":{"Alcoa":"38", "American Motors":"14", "J. I. Case":"17", "General Mills":"19", "Int. Shoes":"41", "MayTag":"73", "Western Publishing":"106", "WoolWorth":"222", },
+
+  "-22":{"Alcoa":"42", "American Motors":"16", "J. I. Case":"18", "General Mills":"19", "Int. Shoes":"41", "MayTag":"72", "Western Publishing":"104", "WoolWorth":"218", },
+
+  "-21":{"Alcoa":"46", "American Motors":"18", "J. I. Case":"19", "General Mills":"20", "Int. Shoes":"40", "MayTag":"71", "Western Publishing":"102", "WoolWorth":"214", },
+
+  "-20":{"Alcoa":"50", "American Motors":"20", "J. I. Case":"20", "General Mills":"20", "Int. Shoes":"40", "MayTag":"70", "Western Publishing":"100", "WoolWorth":"210", },
+
+  "-19":{"Alcoa":"54", "American Motors":"22", "J. I. Case":"21", "General Mills":"21", "Int. Shoes":"39", "MayTag":"69", "Western Publishing":"98", "WoolWorth":"206", },
+
+  "-18":{"Alcoa":"58", "American Motors":"24", "J. I. Case":"22", "General Mills":"21", "Int. Shoes":"39", "MayTag":"68", "Western Publishing":"96", "WoolWorth":"202", },
+
+  "-17":{"Alcoa":"62", "American Motors":"26", "J. I. Case":"23", "General Mills":"22", "Int. Shoes":"38", "MayTag":"67", "Western Publishing":"94", "WoolWorth":"198", },
+
+  "-16":{"Alcoa":"66", "American Motors":"28", "J. I. Case":"24", "General Mills":"22", "Int. Shoes":"38", "MayTag":"66", "Western Publishing":"92", "WoolWorth":"194", },
+
+  "-15":{"Alcoa":"70", "American Motors":"30", "J. I. Case":"25", "General Mills":"23", "Int. Shoes":"37", "MayTag":"65", "Western Publishing":"90", "WoolWorth":"190", },
+
+  "-14":{"Alcoa":"74", "American Motors":"32", "J. I. Case":"26", "General Mills":"23", "Int. Shoes":"37", "MayTag":"64", "Western Publishing":"88", "WoolWorth":"186", },
+
+  "-13":{"Alcoa":"78", "American Motors":"34", "J. I. Case":"27", "General Mills":"24", "Int. Shoes":"36", "MayTag":"63", "Western Publishing":"86", "WoolWorth":"182", },
+
+  "-12":{"Alcoa":"82", "American Motors":"36", "J. I. Case":"28", "General Mills":"24", "Int. Shoes":"36", "MayTag":"62", "Western Publishing":"84", "WoolWorth":"178", },
+
+  "-11":{"Alcoa":"86", "American Motors":"38", "J. I. Case":"29", "General Mills":"25", "Int. Shoes":"35", "MayTag":"61", "Western Publishing":"82", "WoolWorth":"174", },
+
+  "-10":{"Alcoa":"90", "American Motors":"40", "J. I. Case":"30", "General Mills":"25", "Int. Shoes":"35", "MayTag":"60", "Western Publishing":"80", "WoolWorth":"170", },
+
+  "-9":{"Alcoa":"94", "American Motors":"42", "J. I. Case":"31", "General Mills":"26", "Int. Shoes":"34", "MayTag":"59", "Western Publishing":"78", "WoolWorth":"166", },
+
+  "-8":{"Alcoa":"98", "American Motors":"44", "J. I. Case":"32", "General Mills":"26", "Int. Shoes":"34", "MayTag":"58", "Western Publishing":"76", "WoolWorth":"162", },
+
+  "-7":{"Alcoa":"102", "American Motors":"46", "J. I. Case":"33", "General Mills":"27", "Int. Shoes":"33", "MayTag":"57", "Western Publishing":"74", "WoolWorth":"158", },
+
+  "-6":{"Alcoa":"106", "American Motors":"48", "J. I. Case":"34", "General Mills":"27", "Int. Shoes":"33", "MayTag":"56", "Western Publishing":"72", "WoolWorth":"154", },
+
+  "-5":{"Alcoa":"110", "American Motors":"50", "J. I. Case":"35", "General Mills":"28", "Int. Shoes":"32", "MayTag":"55", "Western Publishing":"70", "WoolWorth":"150", },
+
+  "-4":{"Alcoa":"114", "American Motors":"52", "J. I. Case":"37", "General Mills":"28", "Int. Shoes":"32", "MayTag":"53", "Western Publishing":"68", "WoolWorth":"146", },
+
+  "-3":{"Alcoa":"118", "American Motors":"54", "J. I. Case":"39", "General Mills":"29", "Int. Shoes":"31", "MayTag":"51", "Western Publishing":"66", "WoolWorth":"142", },
+
+  "-2":{"Alcoa":"122", "American Motors":"56", "J. I. Case":"41", "General Mills":"29", "Int. Shoes":"31", "MayTag":"49", "Western Publishing":"64", "WoolWorth":"138", },
+
+  "-1":{"Alcoa":"126", "American Motors":"58", "J. I. Case":"43", "General Mills":"30", "Int. Shoes":"30", "MayTag":"47", "Western Publishing":"62", "WoolWorth":"134", },
+
+	"0":{"Alcoa":"130", "American Motors":"60", "J. I. Case":"45", "General Mills":"30", "Int. Shoes":"30", "MayTag":"45", "Western Publishing":"60", "WoolWorth":"130", },
+
+	"1":{"Alcoa":"134", "American Motors":"62", "J. I. Case":"47", "General Mills":"30", "Int. Shoes":"30", "MayTag":"43", "Western Publishing":"58", "WoolWorth":"126", },
+
+	"2":{"Alcoa":"138", "American Motors":"64", "J. I. Case":"49", "General Mills":"31", "Int. Shoes":"29", "MayTag":"41", "Western Publishing":"56", "WoolWorth":"122", },
+
+	"3":{"Alcoa":"142", "American Motors":"66", "J. I. Case":"51", "General Mills":"31", "Int. Shoes":"29", "MayTag":"39", "Western Publishing":"54", "WoolWorth":"118", },
+
+	"4":{"Alcoa":"146", "American Motors":"68", "J. I. Case":"53", "General Mills":"32", "Int. Shoes":"28", "MayTag":"37", "Western Publishing":"52", "WoolWorth":"114", },
+
+	"5":{"Alcoa":"150", "American Motors":"70", "J. I. Case":"55", "General Mills":"32", "Int. Shoes":"28", "MayTag":"35", "Western Publishing":"50", "WoolWorth":"110", },
+
+	"6":{"Alcoa":"154", "American Motors":"72", "J. I. Case":"56", "General Mills":"33", "Int. Shoes":"27", "MayTag":"34", "Western Publishing":"48", "WoolWorth":"106", },
+
+	"7":{"Alcoa":"158", "American Motors":"74", "J. I. Case":"57", "General Mills":"33", "Int. Shoes":"27", "MayTag":"33", "Western Publishing":"46", "WoolWorth":"102", },
+
+	"8":{"Alcoa":"162", "American Motors":"76", "J. I. Case":"58", "General Mills":"34", "Int. Shoes":"26", "MayTag":"32", "Western Publishing":"44", "WoolWorth":"98", },
+
+	"9":{"Alcoa":"166", "American Motors":"78", "J. I. Case":"59", "General Mills":"34", "Int. Shoes":"26", "MayTag":"31", "Western Publishing":"42", "WoolWorth":"94", },
+
+	"10":{"Alcoa":"170", "American Motors":"80", "J. I. Case":"60", "General Mills":"35", "Int. Shoes":"25", "MayTag":"30", "Western Publishing":"40", "WoolWorth":"90", },
+
+	"11":{"Alcoa":"174", "American Motors":"82", "J. I. Case":"61", "General Mills":"35", "Int. Shoes":"25", "MayTag":"29", "Western Publishing":"38", "WoolWorth":"86", },
+
+	"12":{"Alcoa":"178", "American Motors":"84", "J. I. Case":"62", "General Mills":"36", "Int. Shoes":"24", "MayTag":"28", "Western Publishing":"36", "WoolWorth":"82", },
+
+	"13":{"Alcoa":"182", "American Motors":"86", "J. I. Case":"63", "General Mills":"36", "Int. Shoes":"24", "MayTag":"27", "Western Publishing":"34", "WoolWorth":"78", },
+
+	"14":{"Alcoa":"186", "American Motors":"88", "J. I. Case":"64", "General Mills":"37", "Int. Shoes":"23", "MayTag":"26", "Western Publishing":"32", "WoolWorth":"74", },
+
+	"15":{"Alcoa":"190", "American Motors":"90", "J. I. Case":"65", "General Mills":"37", "Int. Shoes":"23", "MayTag":"25", "Western Publishing":"30", "WoolWorth":"70", },
+
+	"16":{"Alcoa":"194", "American Motors":"92", "J. I. Case":"66", "General Mills":"38", "Int. Shoes":"22", "MayTag":"24", "Western Publishing":"28", "WoolWorth":"66", },
+
+	"17":{"Alcoa":"198", "American Motors":"94", "J. I. Case":"67", "General Mills":"38", "Int. Shoes":"22", "MayTag":"23", "Western Publishing":"26", "WoolWorth":"62", },
+
+	"18":{"Alcoa":"202", "American Motors":"96", "J. I. Case":"68", "General Mills":"39", "Int. Shoes":"21", "MayTag":"22", "Western Publishing":"24", "WoolWorth":"58", },
+
+	"19":{"Alcoa":"206", "American Motors":"98", "J. I. Case":"69", "General Mills":"39", "Int. Shoes":"21", "MayTag":"21", "Western Publishing":"22", "WoolWorth":"54", },
+
+	"20":{"Alcoa":"210", "American Motors":"100", "J. I. Case":"70", "General Mills":"40", "Int. Shoes":"20", "MayTag":"20", "Western Publishing":"20", "WoolWorth":"50", },
+
+	"21":{"Alcoa":"214", "American Motors":"102", "J. I. Case":"71", "General Mills":"40", "Int. Shoes":"20", "MayTag":"19", "Western Publishing":"18", "WoolWorth":"46", },
+
+	"22":{"Alcoa":"218", "American Motors":"104", "J. I. Case":"72", "General Mills":"41", "Int. Shoes":"19", "MayTag":"18", "Western Publishing":"16", "WoolWorth":"42", },
+
+	"23":{"Alcoa":"222", "American Motors":"106", "J. I. Case":"73", "General Mills":"41", "Int. Shoes":"19", "MayTag":"17", "Western Publishing":"14", "WoolWorth":"38", },
+
+	"24":{"Alcoa":"226", "American Motors":"108", "J. I. Case":"74", "General Mills":"42", "Int. Shoes":"18", "MayTag":"16", "Western Publishing":"12", "WoolWorth":"34", },
+
+	"25":{"Alcoa":"230", "American Motors":"110", "J. I. Case":"75", "General Mills":"42", "Int. Shoes":"18", "MayTag":"15", "Western Publishing":"10", "WoolWorth":"30", },
+
+*Code used to tranfer data to map
+
+namedict = {
+	"1":"Alcoa",
+	"2":"American Motors",
+	"3":"J. I. Case",
+	"4":"General Mills",
+	"5":"Int. Shoes",
+	"6":"MayTag",
+	"7":"Western Publishing",
+	"8":"WoolWorth"
+}
+
+namedict2 = {
+	"1":"Alcoa",
+	"2":"AmericanMotors",
+	"3":"JICase",
+	"4":"GeneralMills",
+	"5":"IntShoes",
+	"6":"MayTag",
+	"7":"WesternPublishing",
+	"8":"WoolWorth"
+}
+
+z = 1
+while z < 9:
+	print(z)
+	i = 0
+	o = -25
+	nome = namedict[str(z)]
+	f = open("JAVADICTEST.txt", "at")
+	f.write("let prices" + str(namedict2[str(z)]) + " = new map([" + '\n')
+	f.close()
+	while i < 51:
+		f = open("JAVADICTEST.txt", "at")
+		x = i + o
+		f.write('\t' + "[" + str(x) + "," + stockDict[str(x)][str(nome)] + "]" + '\n')
+		#print("prices.set(" + str(x) + "," + stockDict[str(x)][str(nome)] + ")")
+		i+=1
+		f.close()
+	f = open("JAVADICTEST.txt", "at")
+	f.write("])" + '\n')
+	f.close()
