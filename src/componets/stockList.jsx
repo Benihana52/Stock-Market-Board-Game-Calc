@@ -1709,7 +1709,7 @@ export default class Stocklist extends Component {
     dividendAlert(heading, message, stockAmount,) {
         let dividend = (parseInt(stockAmount) * 4)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-        this.windows.confirm(message + " $" + this.currencyFormat(dividend) + ".")
+        window.confirm(message + " $" + this.currencyFormat(dividend) + ".")
         /*
         this.setState({
             alertShowing: true,
@@ -1724,7 +1724,7 @@ export default class Stocklist extends Component {
         let buyTotal = (parseInt(stockAmount) * price)
         console.log(heading, stockAmount, price, stock, buyTotal)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-        this.windows.confirm("You bought " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(buyTotal) + ".")
+        window.confirm("You bought " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(buyTotal) + ".")
         /*
         this.setState({
             alertShowing: true,
@@ -1740,7 +1740,7 @@ export default class Stocklist extends Component {
         let sellTotal = (parseInt(stockAmount) * price)
         console.log(heading, stockAmount, price, stock, sellTotal)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-        this.windows.confirm("You sold " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(sellTotal) + ".")
+        window.confirm("You sold " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(sellTotal) + ".")
         /*
         this.setState({
             alertShowing: true,
@@ -1755,7 +1755,7 @@ export default class Stocklist extends Component {
     sellBasePriceAlert(heading, stockAmount, price, stock) {
         let sellTotal = (parseInt(stockAmount) * price)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-        this.windows.confirm("You have sold " + stockAmount + " shares of " + stock + " at a price of $" + price + " per share for a total of $" + this.currencyFormat(sellTotal) + ".")
+        window.confirm("You have sold " + stockAmount + " shares of " + stock + " at a price of $" + price + " per share for a total of $" + this.currencyFormat(sellTotal) + ".")
         /*
         this.setState({
             alertShowing: true,
@@ -1775,7 +1775,7 @@ export default class Stocklist extends Component {
 
             let tempStockHolder = '1 For 1'
             let tempStockEarned = stockAmount * (stockHolderFactor - 1)
-            this.window.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
+            window.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
             /*
             this.setState({
                 alertShowing: true,
@@ -1789,7 +1789,7 @@ export default class Stocklist extends Component {
 
             let tempStockHolder = '2 For 1'
             let tempStockEarned = stockAmount * (stockHolderFactor - 1)
-            this.windows.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
+            window.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
             /*
             this.setState({
                 alertShowing: true,
@@ -1803,7 +1803,7 @@ export default class Stocklist extends Component {
 
             let tempStockHolder = '3 For 1'
             let tempStockEarned = stockAmount * (stockHolderFactor - 1)
-            this.windows.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
+            window.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
             /*
             this.setState({
                 alertShowing: true,
