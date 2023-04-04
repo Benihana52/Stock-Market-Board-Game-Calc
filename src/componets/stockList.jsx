@@ -538,6 +538,9 @@ export default class Stocklist extends Component {
             alertShowing: false,
             alertHead: "",
             alertMessage: "",
+
+            //disable button
+            buttonDisabledDividend: false,
         }
     }
 
@@ -812,8 +815,10 @@ export default class Stocklist extends Component {
                             name="Alcoa (Broken)"
                             price={this.formatAlcoaPrice()}
                             amount={this.state.alcoaAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ alcoaAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Alcoa has paid you", this.state.alcoaAmount, 4)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "Alcoa has paid you", this.state.alcoaAmount, 4)}
                             posibleDiv={(parseInt(this.state.alcoaAmount) * 4)}
                         />
                         <Stockrow
@@ -821,8 +826,10 @@ export default class Stocklist extends Component {
                             name="Am. Motors."
                             price={this.formatAmericanMotorsaPrice()}
                             amount={this.state.americanMotorsAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ americanMotorsAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "American Motors has paid you", this.state.americanMotorsAmount, 3)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "American Motors has paid you", this.state.americanMotorsAmount, 3)}
                             posibleDiv={(parseInt(this.state.americanMotorsAmount) * 3)}
                         />
                         <Stockrow
@@ -830,8 +837,10 @@ export default class Stocklist extends Component {
                             name="J. I. Case"
                             price={this.formatJICasePrice()}
                             amount={this.state.jICaseAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ jICaseAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "J. I. Case has paid you", this.state.jICaseAmount, 2)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "J. I. Case has paid you", this.state.jICaseAmount, 2)}
                             posibleDiv={(parseInt(this.state.jICaseAmount) * 2)}
                         />
                         <Stockrow
@@ -839,8 +848,10 @@ export default class Stocklist extends Component {
                             name="General Mills"
                             price={this.formatGeneralMillsPrice()}
                             amount={this.state.generalMillsAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ generalMillsAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "General Mills has paid you", this.state.generalMillsAmount, 1)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "General Mills has paid you", this.state.generalMillsAmount, 1)}
                             posibleDiv={(parseInt(this.state.generalMillsAmount) * 1)}
                         />
                         <Stockrow
@@ -848,8 +859,10 @@ export default class Stocklist extends Component {
                             name="Int. Shoe"
                             price={this.formatIntShoesPrice()}
                             amount={this.state.intShoeAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ intShoeAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Int. Shoe has paid you", this.state.intShoeAmount, 1)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "Int. Shoe has paid you", this.state.intShoeAmount, 1)}
                             posibleDiv={(parseInt(this.state.intShoeAmount) * 1)}
                         />
                         <Stockrow
@@ -857,8 +870,10 @@ export default class Stocklist extends Component {
                             name="Maytag"
                             price={this.formatMayTagPrice()}
                             amount={this.state.maytagAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ maytagAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Maytag has paid you", this.state.maytagAmount, 2)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "Maytag has paid you", this.state.maytagAmount, 2)}
                             posibleDiv={(parseInt(this.state.maytagAmount) * 2)}
                         />
                         <Stockrow
@@ -866,8 +881,10 @@ export default class Stocklist extends Component {
                             name="Western Publ."
                             price={this.formatWesternPublishingPrice()}
                             amount={this.state.westernPublAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ westernPublAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Western Publ. has paid you", this.state.westernPublAmount, 3)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "Western Publ. has paid you", this.state.westernPublAmount, 3)}
                             posibleDiv={(parseInt(this.state.westernPublAmount) * 3)}
                         />
                         <Stockrow
@@ -875,8 +892,10 @@ export default class Stocklist extends Component {
                             name="Woolworth"
                             price={this.formatWoolWrthPrice()}
                             amount={this.state.woolwthAmount}
+                            buttonToggle={this.state.buttonDisabledDividend}
                             onChange={(e) => this.setState({ woolwthAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Woolworth has paid you", this.state.woolwthAmount, 4)}
+                            onClick={() => this.state.buttonDisabledDividend ? console.log("Dividend button is disabled. buttonDisabledDividend: " + this.state.buttonDisabledDividend)
+                                : this.dividendAlert("Dividend Recived", "Woolworth has paid you", this.state.woolwthAmount, 4)}
                             posibleDiv={(parseInt(this.state.woolwthAmount) * 4)}
                         />
                         <tr style={this.totalStyle}>
@@ -1712,26 +1731,29 @@ export default class Stocklist extends Component {
 
     dividendAlert(heading, message, stockAmount, divAmount) {
         let dividend = (parseInt(stockAmount) * divAmount)
-        setTimeout(() => this.setState({ alertShowing: false }), 5000)
-        window.confirm(message + " $" + this.currencyFormat(dividend) + ".")
-        /*
-        this.setState({
-            alertShowing: true,
-            alertHead: heading,
-            alertMessage: message + " $" + this.currencyFormat(dividend) + ".",
-            walletTotal: (parseInt(this.state.walletTotal) + dividend),
-        })
-        */
+        {
+            window.confirm(message + " $" + this.currencyFormat(dividend) + ".")
+            /*
+            this.setState({
+                alertShowing: true,
+                alertHead: heading,
+                alertMessage: message + " $" + this.currencyFormat(dividend) + ".",
+                walletTotal: (parseInt(this.state.walletTotal) + dividend),
+            })
+            */
 
-        this.setState({
-            walletTotal: (parseInt(this.state.walletTotal) + dividend),
-        })
+            this.setState({
+                buttonDisabledDividend: true,
+                walletTotal: (parseInt(this.state.walletTotal) + dividend),
+            })
+
+            setTimeout(() => this.setState({ buttonDisabledDividend: false }), 5000)
+        }
     }
 
     buyAlert(heading, stockAmount, price, stock) {
         let buyTotal = (parseInt(stockAmount) * price)
         console.log(heading, stockAmount, price, stock, buyTotal)
-        setTimeout(() => this.setState({ alertShowing: false }), 5000)
         window.confirm("You bought " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(buyTotal) + ".")
         /*
         this.setState({
@@ -1747,7 +1769,6 @@ export default class Stocklist extends Component {
     sellAlert(heading, stockAmount, price, stock) {
         let sellTotal = (parseInt(stockAmount) * price)
         console.log(heading, stockAmount, price, stock, sellTotal)
-        setTimeout(() => this.setState({ alertShowing: false }), 5000)
         window.confirm("You sold " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(sellTotal) + ".")
         /*
         this.setState({
@@ -1762,7 +1783,6 @@ export default class Stocklist extends Component {
 
     sellBasePriceAlert(heading, stockAmount, price, stock) {
         let sellTotal = (parseInt(stockAmount) * price)
-        setTimeout(() => this.setState({ alertShowing: false }), 5000)
         window.confirm("You have sold " + stockAmount + " shares of " + stock + " at a price of $" + price + " per share for a total of $" + this.currencyFormat(sellTotal) + ".")
         /*
         this.setState({
@@ -1777,7 +1797,6 @@ export default class Stocklist extends Component {
     }
 
     stockHoldersAlert(heading, stockAmount, stockHolderFactor) {
-        setTimeout(() => this.setState({ alertShowing: false }), 5000)
 
         if (stockHolderFactor === 2) {
 

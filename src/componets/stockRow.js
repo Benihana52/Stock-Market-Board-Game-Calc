@@ -37,13 +37,22 @@ export default class Stockrow extends Component {
                 </td>
                 <td><span className="m-1">${this.currencyFormat(this.props.amount * this.props.price)}</span></td>
                 <td className="m-1" align='center'>
-                    <button
+                    {this.props.buttonToggle ? <button
+                        disable={this.props.buttonToggle}
                         onClick={() => this.props.onClick()}
                         className="m-1"
-                        style={{ backgroundColor: 'green', color: 'white' }}
+                        style={{ backgroundColor: 'grey', color: 'white' }}
                     >
                         <b>Dividend</b>
-                    </button></td>
+                    </button> : <button
+                        disable={this.props.buttonToggle}
+                        onClick={() => this.props.onClick()}
+                        className="m-1"
+                        style={{ backgroundColor: 'green', color: 'black' }}
+                    >
+                        <b>Dividend</b>
+                    </button>}
+                </td>
                 <td><span>{this.props.posibleDiv}</span></td>
             </tr>
         )
