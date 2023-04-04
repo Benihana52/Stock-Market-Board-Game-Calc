@@ -455,7 +455,7 @@ export default class Stocklist extends Component {
             stockLocation: 0,
 
             //style States
-            stockLocationColor: "black",
+            stockLocationColor: "white",
 
             //define value of stock owned
             stockValueAlcoa: 0,
@@ -1322,12 +1322,15 @@ export default class Stocklist extends Component {
                         : <tbody></tbody>}
                 </Table>
 
-                <div>
+                <div style={{
+                    backgroundColor: 'black',
+                }}>
                     <hr />
                     <h1 style={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        color: 'white',
                     }}>
                         Stock Controls
                     </h1>
@@ -1335,6 +1338,7 @@ export default class Stocklist extends Component {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        color: 'white',
                     }}>
                         Stock Location: &nbsp; <span
                             style={{
@@ -1694,7 +1698,7 @@ export default class Stocklist extends Component {
 
         } else if (this.state.stockLocation === 0) {
 
-            this.setState({ stockLocationColor: "black" })
+            this.setState({ stockLocationColor: "white" })
 
         } else if (this.state.stockLocation < 0) {
 
