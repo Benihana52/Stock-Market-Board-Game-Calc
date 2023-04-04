@@ -813,7 +813,7 @@ export default class Stocklist extends Component {
                             price={this.formatAlcoaPrice()}
                             amount={this.state.alcoaAmount}
                             onChange={(e) => this.setState({ alcoaAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Alcoa has paid you", this.state.alcoaAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "Alcoa has paid you", this.state.alcoaAmount, 4)}
                             posibleDiv={(parseInt(this.state.alcoaAmount) * 4)}
                         />
                         <Stockrow
@@ -822,7 +822,7 @@ export default class Stocklist extends Component {
                             price={this.formatAmericanMotorsaPrice()}
                             amount={this.state.americanMotorsAmount}
                             onChange={(e) => this.setState({ americanMotorsAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "American Motors has paid you", this.state.americanMotorsAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "American Motors has paid you", this.state.americanMotorsAmount, 3)}
                             posibleDiv={(parseInt(this.state.americanMotorsAmount) * 3)}
                         />
                         <Stockrow
@@ -831,7 +831,7 @@ export default class Stocklist extends Component {
                             price={this.formatJICasePrice()}
                             amount={this.state.jICaseAmount}
                             onChange={(e) => this.setState({ jICaseAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "J. I. Case has paid you", this.state.jICaseAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "J. I. Case has paid you", this.state.jICaseAmount, 2)}
                             posibleDiv={(parseInt(this.state.jICaseAmount) * 2)}
                         />
                         <Stockrow
@@ -840,7 +840,7 @@ export default class Stocklist extends Component {
                             price={this.formatGeneralMillsPrice()}
                             amount={this.state.generalMillsAmount}
                             onChange={(e) => this.setState({ generalMillsAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "General Mills has paid you", this.state.generalMillsAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "General Mills has paid you", this.state.generalMillsAmount, 1)}
                             posibleDiv={(parseInt(this.state.generalMillsAmount) * 1)}
                         />
                         <Stockrow
@@ -849,7 +849,7 @@ export default class Stocklist extends Component {
                             price={this.formatIntShoesPrice()}
                             amount={this.state.intShoeAmount}
                             onChange={(e) => this.setState({ intShoeAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Int. Shoe has paid you", this.state.intShoeAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "Int. Shoe has paid you", this.state.intShoeAmount, 1)}
                             posibleDiv={(parseInt(this.state.intShoeAmount) * 1)}
                         />
                         <Stockrow
@@ -858,7 +858,7 @@ export default class Stocklist extends Component {
                             price={this.formatMayTagPrice()}
                             amount={this.state.maytagAmount}
                             onChange={(e) => this.setState({ maytagAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Maytag has paid you", this.state.maytagAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "Maytag has paid you", this.state.maytagAmount, 2)}
                             posibleDiv={(parseInt(this.state.maytagAmount) * 2)}
                         />
                         <Stockrow
@@ -867,7 +867,7 @@ export default class Stocklist extends Component {
                             price={this.formatWesternPublishingPrice()}
                             amount={this.state.westernPublAmount}
                             onChange={(e) => this.setState({ westernPublAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Western Publ. has paid you", this.state.westernPublAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "Western Publ. has paid you", this.state.westernPublAmount, 3)}
                             posibleDiv={(parseInt(this.state.westernPublAmount) * 3)}
                         />
                         <Stockrow
@@ -876,7 +876,7 @@ export default class Stocklist extends Component {
                             price={this.formatWoolWrthPrice()}
                             amount={this.state.woolwthAmount}
                             onChange={(e) => this.setState({ woolwthAmount: e.target.value })}
-                            onClick={() => this.dividendAlert("Dividend Recived", "Woolworth has paid you", this.state.woolwthAmount)}
+                            onClick={() => this.dividendAlert("Dividend Recived", "Woolworth has paid you", this.state.woolwthAmount, 4)}
                             posibleDiv={(parseInt(this.state.woolwthAmount) * 4)}
                         />
                         <tr style={this.totalStyle}>
@@ -1710,8 +1710,8 @@ export default class Stocklist extends Component {
 
     //alert funcitons for the players shares table
 
-    dividendAlert(heading, message, stockAmount,) {
-        let dividend = (parseInt(stockAmount) * 4)
+    dividendAlert(heading, message, stockAmount, divAmount) {
+        let dividend = (parseInt(stockAmount) * divAmount)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
         window.confirm(message + " $" + this.currencyFormat(dividend) + ".")
         /*
@@ -1722,6 +1722,10 @@ export default class Stocklist extends Component {
             walletTotal: (parseInt(this.state.walletTotal) + dividend),
         })
         */
+
+        this.setState({
+            walletTotal: (parseInt(this.state.walletTotal) + dividend),
+        })
     }
 
     buyAlert(heading, stockAmount, price, stock) {
