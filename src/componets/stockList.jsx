@@ -1709,26 +1709,30 @@ export default class Stocklist extends Component {
     dividendAlert(heading, message, stockAmount,) {
         let dividend = (parseInt(stockAmount) * 4)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-
+        windows.confirm(message + " $" + this.currencyFormat(dividend) + ".")
+        /*
         this.setState({
             alertShowing: true,
             alertHead: heading,
             alertMessage: message + " $" + this.currencyFormat(dividend) + ".",
             walletTotal: (parseInt(this.state.walletTotal) + dividend),
         })
+        */
     }
 
     buyAlert(heading, stockAmount, price, stock) {
         let buyTotal = (parseInt(stockAmount) * price)
         console.log(heading, stockAmount, price, stock, buyTotal)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-
+        windows.confirm("You bought " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(buyTotal) + ".")
+        /*
         this.setState({
             alertShowing: true,
             alertHead: heading,
             // You bought ## shares of alcoa for $##.
             alertMessage: "You bought " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(buyTotal) + ".",
         })
+        */
 
     }
 
@@ -1736,20 +1740,23 @@ export default class Stocklist extends Component {
         let sellTotal = (parseInt(stockAmount) * price)
         console.log(heading, stockAmount, price, stock, sellTotal)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-
+        windows.confirm("You sold " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(sellTotal) + ".")
+        /*
         this.setState({
             alertShowing: true,
             alertHead: heading,
             // You sold ## shares of alcoa for $##.
             alertMessage: "You sold " + stockAmount + " shares of " + stock + " for $" + this.currencyFormat(sellTotal) + ".",
         })
+        */
 
     }
 
     sellBasePriceAlert(heading, stockAmount, price, stock) {
         let sellTotal = (parseInt(stockAmount) * price)
         setTimeout(() => this.setState({ alertShowing: false }), 5000)
-
+        windows.confirm("You have sold " + stockAmount + " shares of " + stock + " at a price of $" + price + " per share for a total of $" + this.currencyFormat(sellTotal) + ".")
+        /*
         this.setState({
             alertShowing: true,
             alertHead: heading,
@@ -1757,6 +1764,7 @@ export default class Stocklist extends Component {
             alertMessage: "You have sold " + stockAmount + " shares of " + stock + " at a price of $" + price + " per share for a total of $" + this.currencyFormat(sellTotal) + ".",
             walletTotal: (parseInt(this.state.walletTotal) + sellTotal),
         })
+        */
 
     }
 
@@ -1767,34 +1775,43 @@ export default class Stocklist extends Component {
 
             let tempStockHolder = '1 For 1'
             let tempStockEarned = stockAmount * (stockHolderFactor - 1)
+            window.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
+            /*
             this.setState({
                 alertShowing: true,
                 alertHead: heading,
                 // Congraduations for landing on {1 For 1, 2 For 2, 3 For 3}. You earned ## shares.
                 alertMessage: "Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.",
             })
+            */
 
         } else if (stockHolderFactor === 3) {
 
             let tempStockHolder = '2 For 1'
             let tempStockEarned = stockAmount * (stockHolderFactor - 1)
+            windows.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
+            /*
             this.setState({
                 alertShowing: true,
                 alertHead: heading,
                 // Congraduations for landing on {1 For 1, 2 For 2, 3 For 3}. You earned ## shares.
                 alertMessage: "Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.",
             })
+            */
 
         } else if (stockHolderFactor === 4) {
 
             let tempStockHolder = '3 For 1'
             let tempStockEarned = stockAmount * (stockHolderFactor - 1)
+            windows.confirm("Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.")
+            /*
             this.setState({
                 alertShowing: true,
                 alertHead: heading,
                 // Congraduations for landing on {1 For 1, 2 For 2, 3 For 3}. You earned ## shares.
                 alertMessage: "Congraduations for landing on " + tempStockHolder + ". You earned " + tempStockEarned + " shares.",
             })
+            */
 
         }
 
