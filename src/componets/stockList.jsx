@@ -812,7 +812,7 @@ export default class Stocklist extends Component {
                     <tbody>
                         <Stockrow
                             style={this.alcoaStyle}
-                            name="Alcoa (Broken)"
+                            name="Alcoa"
                             price={this.formatAlcoaPrice()}
                             amount={this.state.alcoaAmount}
                             buttonToggle={this.state.buttonDisabledDividend}
