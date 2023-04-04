@@ -1005,7 +1005,7 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'white', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colspan='3' style={{ backgroundColor: 'black', color: 'green', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Add Stock
                                 </td>
                             </tr>
@@ -1070,7 +1070,7 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'white', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colspan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Sub. Stock
                                 </td>
                             </tr>
@@ -1135,7 +1135,7 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'white', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colspan='3' style={{ backgroundColor: 'black', color: 'green', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Buy Stock
                                 </td>
                             </tr>
@@ -1200,7 +1200,7 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'white', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colspan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Sell Stock
                                 </td>
                             </tr>
@@ -1265,7 +1265,7 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'white', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colspan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Sell At Base Price
                                 </td>
                             </tr>
