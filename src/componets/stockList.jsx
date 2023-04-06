@@ -1794,6 +1794,12 @@ export default class Stocklist extends Component {
         })
         */
 
+        this.setState({
+
+            walletTotal: (parseInt(this.state.walletTotal) + sellTotal),
+
+        })
+
     }
 
     stockHoldersAlert(heading, stockAmount, stockHolderFactor) {
