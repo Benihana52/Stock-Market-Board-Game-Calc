@@ -541,6 +541,7 @@ export default class Stocklist extends Component {
 
             //disable button
             buttonDisabledDividend: false,
+            buttonDisabledStockControl: false,
         }
     }
 
@@ -1373,122 +1374,194 @@ export default class Stocklist extends Component {
                     <thead style={this.titleStyle} align='center'>
                         <tr>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(5)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Up 20
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(5)}
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
                                     Up 20
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(4)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Up 5
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(4)}
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
                                     Up 5
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(3)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Up 4
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(3)}
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
                                     Up 4
-                                </button>
+                                </button>}
                             </th>
                         </tr>
                     </thead>
                     <tbody style={this.titleStyle} align='center'>
                         <tr>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(2)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Up 3
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(2)}
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
                                     Up 3
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(1)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Up 2
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(1)}
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
                                     Up 2
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(0)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Up&nbsp; 1
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(0)}
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
-                                    Up&nbsp; 1
-                                </button>
+                                    UUp&nbsp; 1
+                                </button>}
                             </th>
                         </tr>
                         <tr>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(11)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Dwn 20
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(11)}
                                     className="m-1"
                                     style={{ backgroundColor: 'red', color: 'white' }}
                                 >
                                     Dwn 20
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(10)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Dwn 5
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(10)}
                                     className="m-1"
                                     style={{ backgroundColor: 'red', color: 'white' }}
                                 >
                                     Dwn 5
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(9)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Dwn 4
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(9)}
                                     className="m-1"
                                     style={{ backgroundColor: 'red', color: 'white' }}
                                 >
                                     Dwn 4
-                                </button>
+                                </button>}
                             </th>
 
                         </tr>
 
                         <tr>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(8)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Dwn 3
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(8)}
                                     className="m-1"
                                     style={{ backgroundColor: 'red', color: 'white' }}
                                 >
                                     Dwn 3
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(7)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Dwn 2
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(7)}
                                     className="m-1"
                                     style={{ backgroundColor: 'red', color: 'white' }}
                                 >
                                     Dwn 2
-                                </button>
+                                </button>}
                             </th>
                             <th>
-                                <button
+                                {this.state.buttonDisabledStockControl ? <button
+                                    onClick={() => this.handleStockPriceIncrement(6)}
+                                    className="m-1"
+                                    style={{ backgroundColor: 'grey', color: 'black' }}
+                                >
+                                    Dwn 1
+                                </button> : <button
                                     onClick={() => this.handleStockPriceIncrement(6)}
                                     className="m-1"
                                     style={{ backgroundColor: 'red', color: 'white' }}
                                 >
                                     Dwn 1
-                                </button>
+                                </button>}
                             </th>
                         </tr>
                     </tbody>
@@ -3121,6 +3194,10 @@ export default class Stocklist extends Component {
             console.log('Error: Method:handleStockPriceIncrement - stockType not valid')
         }
         setTimeout(() => this.stockLocationColorDecider(), 10)
+        this.setState({
+            buttonDisabledStockControl: true
+        })
+        setTimeout(() => this.setState({ buttonDisabledStockControl: false }), 500)
 
     }
 
