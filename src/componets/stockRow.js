@@ -41,16 +41,16 @@ export default class Stockrow extends Component {
                         disable={this.props.buttonToggle}
                         onClick={() => this.props.onClick()}
                         className="m-1"
-                        style={{ backgroundColor: 'grey', color: 'white' }}
+                        style={{ backgroundColor: 'grey', color: 'black' }}
                     >
-                        <b>Dividend</b>
+                        <b>Div</b>
                     </button> : <button
                         disable={this.props.buttonToggle}
                         onClick={() => this.props.onClick()}
                         className="m-1"
-                        style={{ backgroundColor: 'green', color: 'black' }}
+                        style={{ backgroundColor: 'green', color: 'white' }}
                     >
-                        <b>Dividend</b>
+                        <b>Div</b>
                     </button>}
                 </td>
                 <td><span>{this.props.posibleDiv}</span></td>
