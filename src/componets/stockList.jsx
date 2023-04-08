@@ -2574,7 +2574,7 @@ export default class Stocklist extends Component {
                     let tempPriceVar = (parseInt(this.state.actionBarSellStockInput) * pricesMayTag.get(this.state.stockLocation))
                     let tempTotalVar = (parseInt(this.state.walletTotal) + tempPriceVar)
                     let tempAmountVar = (parseInt(this.state.maytagAmount) - parseInt(this.state.actionBarSellStockInput))
-                    this.sellAlert('Selling Maytag', this.state.actionBarSellStockInput, parseInt(this.formatMayTagPrice), 'Maytag')
+                    this.sellAlert('Selling Maytag', this.state.actionBarSellStockInput, parseInt(this.formatMayTagPrice()), 'Maytag')
                     this.setState({
                         walletTotal: tempTotalVar,
                         maytagAmount: tempAmountVar,
@@ -2598,7 +2598,7 @@ export default class Stocklist extends Component {
                     let tempPriceVar = (parseInt(this.state.actionBarSellStockInput) * pricesWesternPublishing.get(this.state.stockLocation))
                     let tempTotalVar = (parseInt(this.state.walletTotal) + tempPriceVar)
                     let tempAmountVar = (parseInt(this.state.westernPublAmount) - parseInt(this.state.actionBarSellStockInput))
-                    this.sellAlert('Selling Western Publ.', this.state.actionBarSellStockInput, parseInt(this.formatWesternPublishingPrice), 'Western Publ.')
+                    this.sellAlert('Selling Western Publ.', this.state.actionBarSellStockInput, parseInt(this.formatWesternPublishingPrice()), 'Western Publ.')
                     this.setState({
                         walletTotal: tempTotalVar,
                         westernPublAmount: tempAmountVar,
