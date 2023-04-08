@@ -1586,10 +1586,10 @@ export default class Stocklist extends Component {
                             </td>
                         </tr>
                         <tr style={{ backgroundColor: 'black', color: 'white', }} align='center' className="square border-start">
-                            <td colspan='2' className="square border-end">
+                            <td colspan='2' className="square border-end" style={{ color: 'green' }}>
                                 Add Funds
                             </td>
-                            <td colspan='2' className=" border-end">
+                            <td colspan='2' className=" border-end" style={{ color: 'red' }}>
                                 Sub. Funds
                             </td>
                         </tr>
