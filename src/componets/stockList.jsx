@@ -542,6 +542,7 @@ export default class Stocklist extends Component {
             //disable button
             buttonDisabledDividend: false,
             buttonDisabledStockControl: false,
+            buttonDisabledBrokerFee: false,
         }
     }
 
@@ -799,6 +800,9 @@ export default class Stocklist extends Component {
                     <p>{this.state.alertMessage}</p>
                 </Alert > : <></>}
 
+
+
+
                 <Table style={{ fontSize: 10 }} bordered hover size="sm">
                     <thead style={this.titleStyle} align='center'>
                         <tr>
@@ -900,7 +904,7 @@ export default class Stocklist extends Component {
                             posibleDiv={(parseInt(this.state.woolwthAmount) * 4)}
                         />
                         <tr style={this.totalStyle}>
-                            <td colspan='4'></td>
+                            <td colSpan='4'></td>
                             <td className="m-1" align='center' valign='center'><span>${
                                 this.currencyFormat(
                                     (this.state.alcoaAmount * 10) +
@@ -927,12 +931,27 @@ export default class Stocklist extends Component {
                             }</span></td>
                         </tr>
                         <tr style={this.totalStyle} align='center'>
-                            <td colspan='4'></td>
+                            <td colSpan='4'></td>
                             <td>Wallet: </td>
                             <td><span>${this.currencyFormat(this.state.walletTotal)}</span></td>
                         </tr>
                         <tr style={this.totalStyle} align='center'>
-                            <td colspan='4'></td>
+                            <td> {this.state.buttonDisabledBrokerFee ? <button
+                                className="m-1"
+                                style={{ backgroundColor: 'grey', color: 'black', height: '100%' }}
+                            >
+                                <b>Broker Fee</b>
+
+                            </button> : <button
+                                onClick={() => this.handleBrokerFeeButton()}
+                                className="m-1"
+                                style={{ backgroundColor: 'red', color: 'white', height: '100%' }}
+                            >
+                                <b>Broker Fee</b>
+
+                            </button>}
+                            </td>
+                            <td colSpan='3'></td>
                             <td>Networth: </td>
                             <td><span>${
                                 this.currencyFormat(
@@ -957,7 +976,7 @@ export default class Stocklist extends Component {
                         <tr onClick={() => this.setState({ actionExpanded: !this.state.actionExpanded })}>
                             <th
                                 style={this.actionBarStyle}
-                                colspan='3'
+                                colSpan='3'
                                 className='square border'
                             >
                                 Action Bar {this.state.actionExpanded ? <ChevronDoubleUp /> : <ChevronDoubleDown />}
@@ -967,7 +986,7 @@ export default class Stocklist extends Component {
                     {this.state.actionExpanded ?
                         <tbody>
                             <tr>
-                                <td style={{ backgroundColor: 'black', color: 'white', width: '12.5%' }} align='center' colspan='1' className="square border-start">
+                                <td style={{ backgroundColor: 'black', color: 'white', width: '12.5%' }} align='center' colSpan='1' className="square border-start">
                                     <DropDownShareHolders
                                         name={this.state.actionBarShareHoldersFactor == 1 ? "1 for 1" : this.state.actionBarShareHoldersFactor == 2 ? "2 for 1" : "3 for 1"}
                                         onClick1={() => this.setState({ actionBarShareHoldersFactor: 1 })}
@@ -975,7 +994,7 @@ export default class Stocklist extends Component {
                                         onClick3={() => this.setState({ actionBarShareHoldersFactor: 3 })}
                                     />
                                 </td>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colspan='1' >
+                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colSpan='1' >
                                     <DropDownStocks
                                         name={this.state.dropDownButtonStockTitle}
                                         onClick1={() => this.setState({
@@ -1012,7 +1031,7 @@ export default class Stocklist extends Component {
                                         })}
                                     />
                                 </td>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} colspan='1' className="square border-end">
+                                <td style={{ backgroundColor: 'black', color: 'white', }} colSpan='1' className="square border-end">
                                     <button
                                         onClick={() => this.handleActionBarStockApplyButton()}
                                         className="m-1"
@@ -1025,12 +1044,12 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'green', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colSpan='3' style={{ backgroundColor: 'black', color: 'green', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Add Stock
                                 </td>
                             </tr>
                             <tr style={{ backgroundColor: 'black', color: 'white', fontSize: 10 }} align='center'>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colspan='1' className="square border-start">
+                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colSpan='1' className="square border-start">
                                     <DropDownStocks
                                         name={this.state.dropDownButtonStockAddTitle}
                                         onClick1={() => this.setState({
@@ -1068,7 +1087,7 @@ export default class Stocklist extends Component {
                                     />
                                 </td>
                                 <td align='center'><input
-                                    inputProps={{ inputMode: 'numeric' }}
+                                    inputprops={{ inputMode: 'numeric' }}
                                     pattern="[0-9]*"
                                     style={{ width: "100%" }}
                                     type="number"
@@ -1077,7 +1096,7 @@ export default class Stocklist extends Component {
                                     onBlur={(event) => event.target.value = null}
                                 />
                                 </td>
-                                <td colspan='1' className="square border-end" align='center'>
+                                <td colSpan='1' className="square border-end" align='center'>
                                     <button
                                         onClick={() => this.handleActionBarApplyAddButton()}
                                         className="m-1"
@@ -1090,12 +1109,12 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colSpan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Sub. Stock
                                 </td>
                             </tr>
                             <tr style={{ backgroundColor: 'black', color: 'white', fontSize: 10 }} align='center'>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colspan='1' className="square border-start">
+                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colSpan='1' className="square border-start">
                                     <DropDownStocks
                                         name={this.state.dropDownButtonStockSubTitle}
                                         onClick1={() => this.setState({
@@ -1133,7 +1152,7 @@ export default class Stocklist extends Component {
                                     />
                                 </td>
                                 <td align='center'><input
-                                    inputProps={{ inputMode: 'numeric' }}
+                                    inputprops={{ inputMode: 'numeric' }}
                                     pattern="[0-9]*"
                                     style={{ width: "100%" }}
                                     type="number"
@@ -1142,7 +1161,7 @@ export default class Stocklist extends Component {
                                     onBlur={(event) => event.target.value = null}
                                 />
                                 </td>
-                                <td colspan='1' className="square border-end" align='center'>
+                                <td colSpan='1' className="square border-end" align='center'>
                                     <button
                                         onClick={() => this.handleActionBarApplySubButton()}
                                         className="m-1"
@@ -1155,12 +1174,12 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'green', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colSpan='3' style={{ backgroundColor: 'black', color: 'green', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Buy Stock
                                 </td>
                             </tr>
                             <tr style={{ backgroundColor: 'black', color: 'white', fontSize: 10 }} align='center'>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colspan='1' className="square border-start">
+                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colSpan='1' className="square border-start">
                                     <DropDownStocks
                                         name={this.state.dropDownButtonBuyStockTitle}
                                         onClick1={() => this.setState({
@@ -1198,7 +1217,7 @@ export default class Stocklist extends Component {
                                     />
                                 </td>
                                 <td align='center'><input
-                                    inputProps={{ inputMode: 'numeric' }}
+                                    inputprops={{ inputMode: 'numeric' }}
                                     pattern="[0-9]*"
                                     style={{ width: "100%" }}
                                     type="number"
@@ -1207,7 +1226,7 @@ export default class Stocklist extends Component {
                                     onBlur={(event) => event.target.value = null}
                                 />
                                 </td>
-                                <td colspan='1' className="square border-end" align='center'>
+                                <td colSpan='1' className="square border-end" align='center'>
                                     <button
                                         onClick={() => this.handleActionBarApplyBuyButton()}
                                         className="m-1"
@@ -1220,12 +1239,12 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colSpan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Sell Stock
                                 </td>
                             </tr>
                             <tr style={{ backgroundColor: 'black', color: 'white', fontSize: 10 }} align='center'>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colspan='1' className="square border-start">
+                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colSpan='1' className="square border-start">
                                     <DropDownStocks
                                         name={this.state.dropDownButtonSellStockTitle}
                                         onClick1={() => this.setState({
@@ -1263,7 +1282,7 @@ export default class Stocklist extends Component {
                                     />
                                 </td>
                                 <td align='center'><input
-                                    inputProps={{ inputMode: 'numeric' }}
+                                    inputprops={{ inputMode: 'numeric' }}
                                     pattern="[0-9]*"
                                     style={{ width: "100%" }}
                                     type="number"
@@ -1272,7 +1291,7 @@ export default class Stocklist extends Component {
                                     onBlur={(event) => event.target.value = null}
                                 />
                                 </td>
-                                <td colspan='1' className="square border-end" align='center'>
+                                <td colSpan='1' className="square border-end" align='center'>
                                     <button
                                         onClick={() => this.handleActionBarApplySellButton()}
                                         className="m-1"
@@ -1285,12 +1304,12 @@ export default class Stocklist extends Component {
                             </tr>
 
                             <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
-                                <td colspan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
+                                <td colSpan='3' style={{ backgroundColor: 'black', color: 'red', width: '50%', fontSize: 15 }} className="square border-start border-end">
                                     Sell At Base Price
                                 </td>
                             </tr>
                             <tr style={{ backgroundColor: 'black', color: 'white', fontSize: 10 }} align='center'>
-                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colspan='1' className="square border-start">
+                                <td style={{ backgroundColor: 'black', color: 'white', }} align='center' colSpan='1' className="square border-start">
                                     <DropDownStocks
                                         name={this.state.dropDownButtonSellBasePriceStockTitle}
                                         onClick1={() => this.setState({
@@ -1327,7 +1346,7 @@ export default class Stocklist extends Component {
                                         })}
                                     />
                                 </td>
-                                <td colspan='2' className="square border-end" align='center'>
+                                <td colSpan='2' className="square border-end" align='center'>
                                     <button
                                         onClick={() => this.handleActionBarSellBasePriceButton()}
                                         className="m-1"
@@ -1571,7 +1590,7 @@ export default class Stocklist extends Component {
                     <thead align='center' valign='center'>
                         <tr>
                             <th
-                                colspan='4'
+                                colSpan='4'
                                 style={this.walletBarStyle}
                                 className='square border'
                             >
@@ -1581,21 +1600,21 @@ export default class Stocklist extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <td style={{ width: '30%', backgroundColor: 'black', color: 'white' }} align='center' colspan='4' className="square border-start border-end">
+                            <td style={{ width: '30%', backgroundColor: 'black', color: 'white' }} align='center' colSpan='4' className="square border-start border-end">
                                 <span>${this.currencyFormat(this.state.walletTotal)}</span>
                             </td>
                         </tr>
                         <tr style={{ backgroundColor: 'black', color: 'white', }} align='center' className="square border-start">
-                            <td colspan='2' className="square border-end" style={{ color: 'green' }}>
+                            <td colSpan='2' className="square border-end" style={{ color: 'green' }}>
                                 Add Funds
                             </td>
-                            <td colspan='2' className=" border-end" style={{ color: 'red' }}>
+                            <td colSpan='2' className=" border-end" style={{ color: 'red' }}>
                                 Sub. Funds
                             </td>
                         </tr>
                         <tr style={{ backgroundColor: 'black', color: 'white', }} align='center'>
                             <td align='center' className="square border-start"><input
-                                inputProps={{ inputMode: 'numeric' }}
+                                inputprops={{ inputMode: 'numeric' }}
                                 pattern="[0-9]*"
                                 style={{ width: "100%" }}
                                 type="number"
@@ -1604,7 +1623,7 @@ export default class Stocklist extends Component {
                                 onBlur={(event) => event.target.value = null}
                             />
                             </td>
-                            <td colspan='1' className="square border-end" align='center'>
+                            <td colSpan='1' className="square border-end" align='center'>
                                 <button
                                     onClick={() => this.handleApplyButtonAddFunds()}
                                     className="m-1"
@@ -1615,7 +1634,7 @@ export default class Stocklist extends Component {
                                 </button>
                             </td>
                             <td align='center'><input
-                                inputProps={{ inputMode: 'numeric' }}
+                                inputprops={{ inputMode: 'numeric' }}
                                 pattern="[0-9]*"
                                 style={{ width: "100%" }}
                                 type="number"
@@ -1624,7 +1643,7 @@ export default class Stocklist extends Component {
                                 onBlur={(event) => event.target.value = null}
                             />
                             </td>
-                            <td colspan='1' className="square border-end" align='center' className=" border-end">
+                            <td colSpan='1' className="square border-end" align='center' className=" border-end">
                                 <button
                                     onClick={() => this.handleApplyButtonSubFunds()}
                                     className="m-1"
@@ -1780,6 +1799,72 @@ export default class Stocklist extends Component {
             </div >
         );
     }
+
+    //broker fee button handler
+    handleBrokerFeeButton() {
+
+        let tempBool = window.confirm("Did you land on Broker Fee?.");
+        if (tempBool === false) {
+
+        } else {
+
+            let tempBrokerFee =
+                (this.state.alcoaAmount * 10) +
+                (this.state.americanMotorsAmount * 10) +
+                (this.state.jICaseAmount * 10) +
+                (this.state.generalMillsAmount * 10) +
+                (this.state.intShoeAmount * 10) +
+                (this.state.maytagAmount * 10) +
+                (this.state.westernPublAmount * 10) +
+                (this.state.woolwthAmount * 10)
+
+            console.log("tempNewWalletTotal = " + (parseInt(this.state.wallet) - parseInt(tempBrokerFee)))
+            console.log("tempBrokerFee = " + tempBrokerFee)
+            console.log("tempBool = " + tempBool)
+            console.log("Before: walletTotal = " + parseInt(this.state.wallet))
+            console.log("After: walletTotal = " + (parseInt(this.state.wallet) - parseInt(tempBrokerFee)))
+            console.log(" ")
+
+            let tempBool2 = window.confirm("Do you wish to pay the broker fee of $" + this.currencyFormat(tempBrokerFee) + ".");
+            if (tempBool2 === false) {
+
+            } else {
+
+                let tempNewWalletTotal = parseInt(this.state.walletTotal) - parseInt(tempBrokerFee);
+
+                console.log("tempNewWalletTotal = " + tempNewWalletTotal)
+                console.log("tempBrokerFee = " + tempBrokerFee)
+                console.log("tempBool = " + tempBool)
+                console.log("tempBool2 = " + tempBool2)
+                console.log("Before: walletTotal = " + parseInt(this.state.walletTotal))
+                console.log("After: walletTotal = " + tempNewWalletTotal)
+
+                if (this.state.walletTotal === NaN) {
+
+                    console.log("Error: this.state.walletTotal === NaN")
+
+                } else if (this.state.walletTotal === undefined) {
+
+                    console.log("Error: this.state.walletTotal === undefined")
+
+                } else {
+
+                    this.setState({
+                        buttonDisabledBrokerFee: true,
+                        walletTotal: tempNewWalletTotal,
+
+                    })
+
+                }
+
+                setTimeout(() => this.setState({ buttonDisabledBrokerFee: false }), 500)
+
+            }
+        }
+
+
+    }
+
     //some style funcitons
 
     stockLocationColorDecider() {
@@ -1927,7 +2012,10 @@ export default class Stocklist extends Component {
     //format money example: 10000 = 10,000
 
     currencyFormat(num) {
-        return num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        if (num !== null && !isNaN(num)) {
+            return num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        }
+        return num
     }
 
     //handle clear button press

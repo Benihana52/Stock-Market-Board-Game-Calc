@@ -26,7 +26,7 @@ export default class Stockrow extends Component {
                 <td><span className="m-1">{this.props.name}</span></td>
                 <td><span className="m-1">${this.props.price}</span></td>
                 <td><input
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputprops={{ inputMode: 'numeric' }}
                     pattern="[0-9]*"
                     style={{ width: "100%" }}
                     type="number"
@@ -37,21 +37,14 @@ export default class Stockrow extends Component {
                 </td>
                 <td><span className="m-1">${this.currencyFormat(this.props.amount * this.props.price)}</span></td>
                 <td className="m-1" align='center'>
-                    {this.props.buttonToggle ? <button
-                        disable={this.props.buttonToggle}
+                    <button
+                        disable={this.props.buttonToggle.toString()}
                         onClick={() => this.props.onClick()}
                         className="m-1"
-                        style={{ backgroundColor: 'grey', color: 'black' }}
+                        style={(this.props.buttonToggle ? { backgroundColor: 'grey', color: 'black' } : { backgroundColor: 'green', color: 'white' })}
                     >
                         <b>Div</b>
-                    </button> : <button
-                        disable={this.props.buttonToggle}
-                        onClick={() => this.props.onClick()}
-                        className="m-1"
-                        style={{ backgroundColor: 'green', color: 'white' }}
-                    >
-                        <b>Div</b>
-                    </button>}
+                    </button>
                 </td>
                 <td><span>{this.props.posibleDiv}</span></td>
             </tr>

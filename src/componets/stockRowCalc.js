@@ -26,7 +26,7 @@ export default class StockrowCalc extends Component {
                 <td><span className="m-1">{this.props.name}</span></td>
                 <td><span className="m-1">${this.props.price}</span></td>
                 <td><input
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputprops={{ inputMode: 'numeric' }}
                     pattern="[0-9]*"
                     style={{ width: "100%" }}
                     type="number"
