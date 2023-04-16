@@ -543,6 +543,7 @@ export default class Stocklist extends Component {
             buttonDisabledDividend: false,
             buttonDisabledStockControl: false,
             buttonDisabledBrokerFee: false,
+            buttonDisabledHundredFine: false,
         }
     }
 
@@ -951,7 +952,22 @@ export default class Stocklist extends Component {
 
                             </button>}
                             </td>
-                            <td colSpan='3'></td>
+                            <td> {this.state.buttonDisabledHundredFine ? <button
+                                className="m-1"
+                                style={{ backgroundColor: 'grey', color: 'black', height: '100%' }}
+                            >
+                                <b>$100 Fee</b>
+
+                            </button> : <button
+                                onClick={() => this.handleHundredFeeButton()}
+                                className="m-1"
+                                style={{ backgroundColor: 'red', color: 'white', height: '100%' }}
+                            >
+                                <b>$100 Fee</b>
+
+                            </button>}
+                            </td>
+                            <td colSpan='2'></td>
                             <td>Networth: </td>
                             <td><span>${
                                 this.currencyFormat(
@@ -1800,10 +1816,46 @@ export default class Stocklist extends Component {
         );
     }
 
+    //$100 fee button handler
+    handleHundredFeeButton() {
+
+        let tempBool = window.confirm("Did you land on $100 fine?");
+        if (tempBool === false) {
+
+        } else {
+
+            let tempNewWalletTotal = parseInt(this.state.walletTotal) - 100;
+
+
+            if (this.state.walletTotal === NaN) {
+
+                console.log("Error: this.state.walletTotal === NaN")
+
+            } else if (this.state.walletTotal === undefined) {
+
+                console.log("Error: this.state.walletTotal === undefined")
+
+            } else {
+
+                this.setState({
+                    buttonDisabledHundredFine: true,
+                    walletTotal: tempNewWalletTotal,
+
+                })
+
+            }
+
+            setTimeout(() => this.setState({ buttonDisabledHundredFine: false }), 500)
+
+        }
+
+
+    }
+
     //broker fee button handler
     handleBrokerFeeButton() {
 
-        let tempBool = window.confirm("Did you land on Broker Fee?.");
+        let tempBool = window.confirm("Did you land on Broker Fee?");
         if (tempBool === false) {
 
         } else {
