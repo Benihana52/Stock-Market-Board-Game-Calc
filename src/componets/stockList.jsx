@@ -1483,7 +1483,7 @@ export default class Stocklist extends Component {
                                     className="m-1"
                                     style={{ backgroundColor: 'green', color: 'white' }}
                                 >
-                                    UUp&nbsp; 1
+                                    Up&nbsp; 1
                                 </button>}
                             </th>
                         </tr>
