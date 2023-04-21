@@ -511,3 +511,12 @@ render() {
             </div >
         );
     }
+
+
+    <color=red>M</color>
+    <color=purple>A</colon>
+    <color=green>G</color>
+    <color=blue>I</color>
+    <color=orange>C</color>
+    
+    This is <color=red>M</color><color=purple>A</color><color=green>G</color><color=blue>I</color><color=orange>C</color>
