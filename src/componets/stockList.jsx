@@ -531,7 +531,7 @@ export default class Stocklist extends Component {
             walletAddInput: 0,
             walletSubInput: 0,
 
-            // Collapse and expand UI sections
+            //Collapse and expand UI sections
             actionExpanded: false,
 
             //alert states
@@ -2351,6 +2351,9 @@ export default class Stocklist extends Component {
                 })
 
             }
+
+            setTimeout(() => this.setState({ actionExpanded: false }), 500)
+
         } else {
 
         }
@@ -2386,6 +2389,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2409,6 +2413,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2433,6 +2438,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2457,6 +2463,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2481,6 +2488,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2505,6 +2513,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2529,6 +2538,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2553,6 +2563,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarBuyStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2603,6 +2614,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2626,6 +2638,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2650,6 +2663,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2674,6 +2688,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2698,6 +2713,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2722,6 +2738,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2746,6 +2763,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2770,6 +2788,7 @@ export default class Stocklist extends Component {
                         actionBarBuyStockFactor: 0,
                         actionBarSellStockInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
 
                     this.setState({
@@ -2777,6 +2796,8 @@ export default class Stocklist extends Component {
                     })
 
                 }
+
+                setTimeout(() => this.setState({ actionExpanded: false }), 500)
 
 
             }
@@ -2851,6 +2872,8 @@ export default class Stocklist extends Component {
                 actionBarStockAddInput: 0,
             })
 
+            setTimeout(() => this.setState({ actionExpanded: false }), 500)
+
         } else {
 
             this.setState({
@@ -2887,6 +2910,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2903,6 +2927,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2919,6 +2944,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2935,6 +2961,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2951,6 +2978,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2967,6 +2995,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2983,6 +3012,7 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
@@ -2999,11 +3029,15 @@ export default class Stocklist extends Component {
                         actionBarStockSubFactor: 0,
                         actionBarStockSubInput: 0,
                     })
+                    setTimeout(() => this.setState({ actionExpanded: false }), 500)
                 } else {
                     this.setState({
                         actionBarStockSubInput: 'Invalid Input: Input exceeds your total stock holdings. Please try again.',
                     })
                 }
+
+
+
             } else {
                 console.log(
                     "Error: handleActionBarApplyAddButton did not funciton as intened. "
@@ -3018,6 +3052,8 @@ export default class Stocklist extends Component {
                     actionBarStockSubInput: 0,
 
                 })
+
+
             }
         } else {
 
@@ -3055,6 +3091,8 @@ export default class Stocklist extends Component {
             actionBarShareHoldersFactor: 1,
             actionBarStockFactor: 0,
         })
+
+        setTimeout(() => this.setState({ actionExpanded: false }), 500)
     }
 
     actionBarShareHoldersMathHandler(stockMultiplier) {
